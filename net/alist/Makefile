@@ -49,13 +49,13 @@ define Package/alist/conffiles
 /etc/config/alist
 endef
 
-WEB_VERSION:=3.35.0
+WEB_VERSION:=3.37.1
 WEB_FILE:=$(PKG_NAME)-web-$(WEB_VERSION).tar.gz
 define Download/alist-web
 	URL:=https://github.com/alist-org/alist-web/releases/download/$(WEB_VERSION)/
 	URL_FILE:=dist.tar.gz
 	FILE:=$(WEB_FILE)
-	HASH:=940608c2b9f64cf585ad4d241545e5f1e59e5f6e54ef8ea2c9c3a29998313fc7
+	HASH:=0ca1fceb5291c59d5b5dcc0f3e871eac96485d39abce8495f1eb510cc12bccf6
 endef
 
 define Build/Prepare
