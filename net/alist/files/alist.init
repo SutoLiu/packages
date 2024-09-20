@@ -26,7 +26,19 @@ uci_json_add_string() {
 	json_add_string "$1" "$value"
 }
 
+awaiting_network_connection() {
+	local COUNT=$1
+	while [ $COUNT -gt 0 ]; do
+		if ping -c 1 223.5.5.5 || ping -c 1 8.8.8.8; then
+			break
+		fi
+		COUNT=$(($COUNT-1))
+		sleep 3
+	done
+}
+
 start_service() {
+	awaiting_network_connection 20
 	config_load "$CONF"
 
 	local enabled
