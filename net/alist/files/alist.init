@@ -89,7 +89,7 @@ start_service() {
 		uci_json_add_int "max_age" "log_max_age" "15"
 		json_add_boolean "compress" "0"
 	json_close_object
-	json_add_int "delayed_start" "0"
+	json_add_int "delayed_start" "9"
 	uci_json_add_int "max_connections" "site_max_connections"
 	uci_json_add_boolean "tls_insecure_skip_verify" "site_tls_insecure"
 	json_dump > "$CONF_DIR/config.json"
