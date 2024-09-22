@@ -38,7 +38,7 @@ awaiting_network_connection() {
 }
 
 start_service() {
-	awaiting_network_connection 10 >/dev/null 2>&1 &
+	awaiting_network_connection 10 >/dev/null
 	config_load "$CONF"
 
 	local enabled
