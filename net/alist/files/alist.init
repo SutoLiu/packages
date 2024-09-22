@@ -33,12 +33,12 @@ awaiting_network_connection() {
 			break
 		fi
 		COUNT=$(($COUNT-1))
-		sleep 3
+		sleep 9
 	done
 }
 
 start_service() {
-	awaiting_network_connection 20
+	awaiting_network_connection 10 >/dev/null 2>&1 &
 	config_load "$CONF"
 
 	local enabled
