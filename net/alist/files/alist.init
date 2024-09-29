@@ -29,7 +29,7 @@ uci_json_add_string() {
 awaiting_network_connection() {
 	local COUNT=$1
 	while [ $COUNT -gt 0 ]; do
-		if ping -c 1 223.5.5.5 || ping -c 1 8.8.8.8; then
+		if ping -c 1 qq.com || ping -c 1 taobao.com; then
 			break
 		fi
 		COUNT=$(($COUNT-1))
